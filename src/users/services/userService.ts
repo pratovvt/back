@@ -20,9 +20,9 @@ class UserService {
 
     async signin(userDto: CreateUserDto) {
         const user = await userRepo.findOne({where: {id: userDto.id}})
-        if (!user) throw ApiError.BadRequest('Login or Password is incorrect') //Login is not correct
+        if (!user) throw ApiError.BadRequest('Login or Password is incorrect')
         const isPassEquals = await bcrypt.compare(userDto.password, user.password);
-        if (!isPassEquals) throw ApiError.BadRequest('Login or Password is incorrect'); //Password is not correct
+        if (!isPassEquals) throw ApiError.BadRequest('Login or Password is incorrect');
         const tokens = tokenService.generateTokens({id: user.id});
         await tokenService.saveToken(user.id, tokens.refreshToken);
         return {...tokens}
