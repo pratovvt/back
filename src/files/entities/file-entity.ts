@@ -15,5 +15,5 @@ export class FileEntity {
     @Column()
     uploaded_date: Date;
     @Column()
-    src:string;
+    src: string;
 }

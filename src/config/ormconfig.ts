@@ -3,6 +3,7 @@ import {config} from 'dotenv'
 import {UserEntity} from "../users/entities/user-entity";
 import {TokenEntity} from "../users/entities/token-entity";
 import {FileEntity} from "../files/entities/file-entity";
+import {CompanyEntity} from "../company/entities/company-entity";
 
 config()
 export const AppDataSource = new DataSource({
@@ -12,7 +13,7 @@ export const AppDataSource = new DataSource({
     username: process.env.PG_USERNAME,
     password: process.env.PG_PASSWORD,
     database: process.env.PG_DATABASE,
-    entities: [UserEntity,TokenEntity,FileEntity],
+    entities: [UserEntity, TokenEntity, FileEntity, CompanyEntity],
     synchronize: true,
 })
 AppDataSource.initialize()

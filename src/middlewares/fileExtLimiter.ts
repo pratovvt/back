@@ -15,7 +15,7 @@ const fileExtLimiter = (allowedExtArray) => {
         if (!allowed) {
             const message = `Upload failed. Only ${allowedExtArray.toString()} files allowed.`.replace(/,/g, ", ");
 
-            return res.status(422).json({ status: "error", message });
+            return res.status(422).json({status: "error", message});
         }
 
         next()

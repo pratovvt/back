@@ -1,5 +1,5 @@
 const theRouter = require('express').Router;
-const fileController = require('../controllers/filesController')
+const fileController = require('../controllers/files-controller')
 const fileRouter = new theRouter();
 const fileUpload = require('express-fileupload')
 const filesPayload = require('../../middlewares/filesPayloadExists')

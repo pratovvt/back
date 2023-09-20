@@ -1,6 +1,6 @@
 import {NextFunction, Request, Response} from "express";
 
-const fileService = require('../services/filesService')
+const fileService = require('../services/files-service')
 
 class FilesController {
     async upload(req: Request, res: Response, next: NextFunction) {
