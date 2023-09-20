@@ -52,7 +52,7 @@ class FilesService {
         return await fileRepo.save(updatedFile)
     }
 
-    async download(id:number) {
+    async download(id: number) {
         const file = await fileRepo.findOne({where: {id}})
         if (!file) throw ApiError.BadRequest(`File with id ${id} not found`)
         return file.src
