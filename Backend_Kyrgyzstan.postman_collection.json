@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "0ae9091a-70e4-4320-a969-559b33844905",
+		"name": "Backend_Kyrgyzstan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21816186"
+	},
+	"item": [
+		{
+			"name": "Companies",
+			"item": [
+				{
+					"name": "Get all companies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/company/find"
+					},
+					"response": []
+				},
+				{
+					"name": "Get company by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/company/find/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create company",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test\",\r\n    \"phone\":\"zxcaszxc\",\r\n    \"address\":\"test@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/company/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Update information about company by id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"123\",\r\n    \"phone\":\"123\",\r\n    \"address\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/company/update/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete company by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:3000/company/delete/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/users/find"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/users/find/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"as4cc56aszxcdasdd5cccczxccccasdasd@mail.ru\",\r\n        \"password\": \"12Aasdasd3\",\r\n        \"first_name\": \"first_name\",\r\n        \"patronymic\": \"patronymic\",\r\n        \"last_name\": \"last_name\",\r\n        \"company_id\": \"1\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/users/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://localhost:3000/users/delete/8"
+					},
+					"response": []
+				},
+				{
+					"name": "Authorization/Sign in",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
