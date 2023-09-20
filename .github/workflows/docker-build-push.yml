@@ -24,6 +24,7 @@ jobs:
           docker buildx create --use
           docker buildx build --platform linux/amd64,linux/arm64 \
             -t ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest \
-            -t ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ github.ref }} .
+            -t ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{  github.ref_name }} .
           docker login ghcr.io -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-          docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{ github.sha }}
+          docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:${{  github.ref_name }}
+          docker push ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:latest
