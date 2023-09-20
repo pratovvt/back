@@ -10,16 +10,7 @@ RUN npm install
 
 COPY . /usr/src/app
 
-EXPOSE 443
-
-ENV PORT=443
-ENV PG_HOST=localhost
-ENV PG_PORT=5432
-ENV PG_USERNAME=postgres
-ENV PG_PASSWORD=1
-ENV PG_DATABASE=backend
-ENV JWT_ACCESS_SECRET=secret
-ENV JWT_REFRESH_SECRET=secret
+EXPOSE 3000
 
 CMD ["npm","build"]
 
