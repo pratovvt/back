@@ -9,7 +9,7 @@ const userRouter = require('./users/routes/index')
 const fileRouter = require('./files/routes/index')
 const companyRouter = require('./company/routes/index')
 const morgan = require('morgan')
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3000
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
