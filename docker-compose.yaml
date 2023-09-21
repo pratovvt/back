@@ -5,14 +5,36 @@ services:
     restart: always
     ports:
       - "8080:80"
-      - "8443:80"
+      - "2222:80"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
+      - admin
     links:
+      - "admin:admin"
       - "app:app"
-
+  admin:
+    build:
+      context: .
+      dockerfile: strapi.Dockerfile
+    restart: always
+    image: ghcr.io/pratovvt/admin:latest
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: database
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_NAME: postgres
+      PORT: 1338
+    ports:
+      - "1338:3001"
+    volumes:
+      - ./admin:/admin
+    links:
+      - "database:database"
+    depends_on:
+      - database
   app:
     build:
       context: .
@@ -37,7 +59,7 @@ services:
     image: postgres:latest
     restart: always
     ports:
-      - "5432:5432"
+      - "4444:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
